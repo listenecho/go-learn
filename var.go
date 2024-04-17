@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// 全局变脸
+// 全局变量
 
 var global1 = 100
 var global2 = 1001
@@ -54,9 +54,11 @@ func main() {
 	fmt.Println(n33)
 
 	n111, n232, n334 := "10", 1, 10.2
+	fmt.Println("------------")
 	fmt.Println(n111)
 	fmt.Println(n232)
 	fmt.Println(n334)
+	fmt.Println("------------")
 
 	// 使用全局变量
 	fmt.Println(global1)
@@ -72,5 +74,14 @@ func main() {
 
 	fmt.Println(global5)
 	fmt.Println(global6)
+
+	fmt.Println("-----指针-------")
+	var ptr = &global1
+	fmt.Println("指针", ptr)
+
+	ptr2 := new(int)
+	*ptr2 = 200
+	fmt.Println("指针2", ptr2)
+	fmt.Println("指针2", *ptr2)
 
 }
