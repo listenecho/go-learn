@@ -14,6 +14,7 @@ func array1() {
 
 }
 
+// 需要注意: 由于数组长度是固定的，因此在 Golang 中很少直接使用数组。更常见的是使用切片（slice），它是一个动态数组，可以根据需要动态增加或减少大小。
 func array2() {
 
 	var arr [3]int = [3]int{1, 2, 3}
@@ -35,5 +36,8 @@ func array2() {
 	fmt.Println(arr3)
 	fmt.Println(arr4)
 	fmt.Println(arr5)
+
+	arr6 := [3]bool{true, false}
+	fmt.Println(arr6)
 
 }

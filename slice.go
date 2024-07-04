@@ -12,6 +12,12 @@ func main() {
 	slice4()
 
 	arr1()
+
+	slice5()
+
+	slice6()
+
+	slice7()
 }
 
 func arr1() {
@@ -59,4 +65,42 @@ func slice4() {
 
 	myslice = myslice[:cap(myslice)]
 	fmt.Printf("myslice的第四个元素为: %d", myslice[3])
+}
+
+func slice5() {
+	slice1 := []int{1, 2, 3, 4, 5}
+	modifySlice(slice1)
+	fmt.Printf("旧的slice值为: %d\n", slice1[0])
+	fmt.Printf("旧的slice值为: %v\n", slice1)
+}
+
+func modifySlice(slice []int) {
+	slice[0] = 100
+	slice = []int{7, 5, 5, 5}
+	fmt.Printf("新的的slice值为: %d\n", slice[0])
+
+}
+
+func slice6() {
+	arr := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	modifyArr(arr)
+	fmt.Printf("旧的Arr值为: %d\n", arr[0])
+}
+
+func modifyArr(arr [10]int) {
+	arr[0] = 100
+	fmt.Printf("新的的Arr值为: %d\n", arr[0])
+}
+
+func modifySlice2(s []int) {
+	s = append(s, 4)              // 向切片中添加一个元素
+	fmt.Println("函数内部修改后的切片:", s) // 输出: [1 2 3 4]
+}
+
+func slice7() {
+	originalSlice := []int{1, 2, 3}
+	fmt.Println("原始切片:", originalSlice) // 输出: [1 2 3]
+
+	modifySlice2(originalSlice)
+	fmt.Println("原始切片未被修改:", originalSlice) // 输出: [1 2 3]
 }
